@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Happy Birthday 🎂</title>
+<style>
+body{
+  background:#000;
+  color:white;
+  text-align:center;
+  padding-top:100px;
+  font-family:Arial;
+}
+.candle{
+  width:20px;
+  height:80px;
+  background:white;
+  margin:auto;
+  position:relative;
+}
+.flame{
+  width:20px;
+  height:20px;
+  background:orange;
+  border-radius:50%;
+  position:absolute;
+  top:-20px;
+  animation:flicker 0.3s infinite;
+}
+@keyframes flicker{
+  0%{opacity:1;}
+  50%{opacity:0.6;}
+  100%{opacity:1;}
+}
+button{
+  padding:15px 30px;
+  border:none;
+  border-radius:30px;
+  background:#ff3366;
+  color:white;
+}
+</style>
+</head>
+<body>
+
+<h1>🎉 Happy Birthday My Love 🎉</h1>
+
+<div class="candle">
+  <div class="flame"></div>
+</div>
+
+<p>Make a wish 💖</p>
+
+<button onclick="location.href='proposal.html'">Next ➡️</button>
+
+</body>
+</html>

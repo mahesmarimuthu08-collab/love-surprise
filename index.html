@@ -1,239 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<title>For Yohesh ❤️</title>
-
+<title>Secret Love 💖</title>
 <style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-    overflow-x: hidden;
-    text-align: center;
+body{
+  background:linear-gradient(#ff9a9e,#fad0c4);
+  font-family:Arial;
+  text-align:center;
+  padding-top:100px;
 }
-
-.page {
-    display: none;
-    min-height: 100vh;
-    padding: 30px;
+input{
+  padding:12px;
+  font-size:18px;
+  border-radius:10px;
+  border:none;
 }
-
-.page.active {
-    display: block;
-}
-
-h1, h2 {
-    color: #ff2e63;
-}
-
-button {
-    padding: 12px 25px;
-    border: none;
-    border-radius: 25px;
-    background: #ff2e63;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    margin: 10px;
-}
-
-input {
-    padding: 12px;
-    border-radius: 20px;
-    border: none;
-    text-align: center;
-    font-size: 16px;
-}
-
-.photos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.photos img {
-    width: 100%;
-    max-width: 230px;
-    height: auto;
-    border-radius: 15px;
-    margin: 10px;
-    background: white;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
-
-/* Hearts */
-.heart {
-    position: fixed;
-    bottom: -20px;
-    font-size: 20px;
-    animation: float 6s linear infinite;
-}
-@keyframes float {
-    from {transform: translateY(0); opacity: 1;}
-    to {transform: translateY(-110vh); opacity: 0;}
-}
-
-/* Candle */
-.candle {
-    width: 60px;
-    height: 120px;
-    background: #fff5e1;
-    margin: 40px auto;
-    border-radius: 10px;
-    border: 2px solid #ff2e63;
-    position: relative;
-}
-
-.flame {
-    width: 20px;
-    height: 25px;
-    background: radial-gradient(circle, yellow, orange, red);
-    border-radius: 50%;
-    position: absolute;
-    top: -25px;
-    left: 20px;
-    display: none;
-}
-
-/* Proposal */
-#noBtn {
-    position: absolute;
-}
-
-/* Music */
-.music-btn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
+button{
+  padding:12px 25px;
+  font-size:18px;
+  border:none;
+  border-radius:20px;
+  background:#ff3366;
+  color:white;
+  cursor:pointer;
 }
 </style>
 </head>
-
 <body>
 
-<!-- MUSIC -->
-<audio id="music" src="song.mp3" loop></audio>
-<button class="music-btn" onclick="playMusic()">🎵 Play Music</button>
+<h2>🔐 Surprise Unlock</h2>
+<p>Hint: The man she loves most in the world 💕</p>
 
-<!-- PAGE 1 -->
-<div class="page active">
-    <h1>Happy Birthday Yohesh ❤️</h1>
-    <h2>15 • 02 • 2003 🎂</h2>
-    <p>You started as my crush,<br>and slowly became my forever 💖</p>
-    <button onclick="nextPage()">Enter 💌</button>
-</div>
-
-<!-- PAGE 2 PASSWORD -->
-<div class="page">
-    <h2>🔒 Surprise Lock</h2>
-    <p><b>Hint:</b> The man I love the most in the world ❤️</p>
-    <input id="pwd" placeholder="Enter password">
-    <br><br>
-    <button onclick="checkPassword()">Unlock 🔓</button>
-    <p id="error" style="color:red;"></p>
-</div>
-
-<!-- PAGE 3 PHOTOS -->
-<div class="page">
-    <h2>Our Memories 📸</h2>
-    <div class="photos">
-        <img src="photo1.jpg">
-        <img src="photo2.jpg">
-        <img src="photo3.jpg">
-        <img src="photo4.jpg">
-        <img src="photo5.jpg">
-    </div>
-    <p>Every photo is a heartbeat 💞</p>
-    <button onclick="nextPage()">Next ➡️</button>
-</div>
-
-<!-- PAGE 4 LOVE -->
-<div class="page">
-    <h2>Just One Truth ❤️</h2>
-    <p>
-        Loving you feels like home.<br>
-        You are my always and forever ♾️
-    </p>
-    <button onclick="nextPage()">Next ➡️</button>
-</div>
-
-<!-- PAGE 5 CANDLE -->
-<div class="page">
-    <h2>Make a Wish 🎂</h2>
-    <p>Tap the candle 🕯️</p>
-    <div class="candle" onclick="lightCandle()">
-        <div class="flame" id="flame"></div>
-    </div>
-    <button onclick="nextPage()">Next ➡️</button>
-</div>
-
-<!-- PAGE 6 PROPOSAL -->
-<div class="page">
-    <h2>Will You Marry Me? 💍</h2>
-    <button onclick="yesClicked()">YES ❤️</button>
-    <button id="noBtn" onmouseover="moveNo()">NO 🙈</button>
-</div>
-
-<!-- FINAL -->
-<div class="page">
-    <h1>💖 I ALREADY KNEW 💖</h1>
-    <p>
-        You chose right ❤️<br>
-        Because we are meant forever ♾️
-    </p>
-</div>
+<input type="password" id="pass" placeholder="Enter password"><br><br>
+<button onclick="check()">Unlock 💖</button>
 
 <script>
-let page = 0;
-const pages = document.querySelectorAll('.page');
-
-function nextPage() {
-    pages[page].classList.remove('active');
-    page++;
-    pages[page].classList.add('active');
+function check(){
+  if(document.getElementById("pass").value === "Yohesh"){
+    window.location.href="memories.html";
+  } else {
+    alert("Oops 😅 Try again");
+  }
 }
-
-function checkPassword() {
-    const p = document.getElementById("pwd").value;
-    if (p === "Yohesh") {
-        nextPage();
-    } else {
-        document.getElementById("error").innerText = "Wrong password 🙈 Try again ❤️";
-    }
-}
-
-function playMusic() {
-    const m = document.getElementById("music");
-    m.volume = 0.7;
-    m.play().catch(() => {
-        alert("Tap once to allow music ❤️");
-    });
-}
-
-function lightCandle() {
-    document.getElementById("flame").style.display = "block";
-}
-
-function moveNo() {
-    const no = document.getElementById("noBtn");
-    no.style.left = Math.random() * 80 + "vw";
-    no.style.top = Math.random() * 80 + "vh";
-}
-
-function yesClicked() {
-    nextPage();
-}
-
-/* Floating hearts */
-setInterval(() => {
-    const h = document.createElement("div");
-    h.className = "heart";
-    h.innerText = "❤️";
-    h.style.left = Math.random() * 100 + "vw";
-    document.body.appendChild(h);
-    setTimeout(() => h.remove(), 6000);
-}, 500);
 </script>
 
 </body>

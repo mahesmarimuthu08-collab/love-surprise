@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Proposal 💍</title>
+<style>
+body{
+  background:#ffb6c1;
+  text-align:center;
+  font-family:Arial;
+  padding-top:100px;
+}
+button{
+  padding:15px 25px;
+  font-size:18px;
+  border:none;
+  border-radius:20px;
+}
+#yes{
+  background:#ff3366;
+  color:white;
+}
+#no{
+  position:absolute;
+  background:#555;
+  color:white;
+}
+</style>
+</head>
+<body>
+
+<h1>Will you marry me? 💍❤️</h1>
+
+<button id="yes" onclick="location.href='final.html'">YES 💖</button>
+<button id="no">NO 😜</button>
+
+<script>
+const no = document.getElementById("no");
+no.onmouseover = () => {
+  no.style.left = Math.random()*300 + "px";
+  no.style.top = Math.random()*300 + "px";
+};
+</script>
+
+</body>
+</html>
